@@ -9,7 +9,7 @@ import { BiError } from "react-icons/bi";
 /* Componentes */
 import Track from "./Track";
 /* Token */
-import useAuth from "./useAuth";
+import useAuth from "../utils/useAuth";
 
 /* Client id para Spotify */
 const spotifyApi = new SpotifyWebApi({
