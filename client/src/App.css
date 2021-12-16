@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: rgb(182, 40, 68);
+  --bgColor: rgb(20, 20, 20);
+  --mainColorHover: rgb(224, 84, 112);
+}
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.login h1 {
+  color: var(--mainColor);
+  font-size: 6rem;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+}
+
+.login a {
+  background-color: var(--mainColor);
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  margin-top: 15px;
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
+}
+
+.login a:hover {
+  background-color: var(--mainColorHover);
+}
+
+.login h1:hover,
+.loginIcon:hover {
+  color: var(--mainColorHover);
+}
+
+.dashboard {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bgColor);
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.dashboardContainer {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 20vh 1fr;
+  overflow-y: hidden;
+  justify-items: center;
+}
+
+.typingArea {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.typingArea h1 {
+  color: var(--mainColor);
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  transition: all 0.4s ease;
+}
+
+.typingArea h1:hover {
+  color: var(--mainColorHover);
+}
+
+.typingArea input {
+  width: 90%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.336);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+}
+
+.typingArea input:hover {
+  background-color: rgba(255, 255, 255, 0.438);
+}
+
+.trackList {
+  width: 100%;
+  height: 100%;
+  background-color: var(--mainColor);
+  padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.traks {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.74);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 90% 1fr;
+  overflow-y: hidden;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.track {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.678);
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.track:hover {
+  background-color: rgba(0, 0, 0, 0.925);
+}
+
+.track .description {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  padding: 0px 10px;
+}
+
+.track .description h1 {
+  font-size: 1rem;
+}
+
+.track .description p {
+  font-size: 0.7rem;
+}
+
+.track .icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.track img {
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.detailsShow {
+  border-top: 1px solid var(--mainColor);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(27, 27, 27, 0.911);
+  transition: all 0.4s ease;
+}
+
+.detailsHide {
+  border-top: 1px solid var(--mainColor);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(27, 27, 27, 0.911);
+  transition: all 0.4s ease;
+  transform: translateY(100%);
+}
+
+.closeShow {
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  transition: all 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.781);
+}
+
+.closeHide {
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  transition: all 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.781);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.trackDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.trackDetails img {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--mainColor);
+  margin-top: 10px;
+}
+
+.trackDetails h1 {
+  color: var(--mainColor);
+  margin-top: 10px;
+  font-size: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.trackDetails h1:hover {
+  color: var(--mainColorHover);
+}
+
+.trackDetails h2 {
+  color: white;
+  font-size: 1rem;
+}
+
+.trackDetails p {
+  color: rgba(255, 255, 255, 0.74);
+  margin-top: 8px;
+}
+
+.trackDetails a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: var(--mainColor);
+  border-radius: 20px;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.trackDetails a:hover {
+  background-color: var(--mainColorHover);
+}
+
+.pagination {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationIcon {
+  color: var(--mainColor);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 0px 10px;
+  transition: all 0.4s ease;
+}
+
+.paginationIcon:hover {
+  color: var(--mainColorHover);
+}
+
+.pagination h1 {
+  font-size: 1.3rem;
+  color: var(--mainColor);
+}
+
+.message {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--mainColor);
+  font-size: 1rem;
+  color: var(--mainColor);
+  padding-bottom: 10px;
+}
+
+.spIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  transform: translateY(1px);
+}
+
+.messageIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--mainColor);
+}
+
+.titleIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--mainColor);
+  transform: translateY(4px);
+}
+
+.loginTitleIcon {
+  width: 90px;
+  height: 90px;
+  color: var(--mainColor);
+  transform: translate(-12px, 14px);
+}
+
+.loginIcon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(5px);
+  margin-left: 5px;
+}
+
+.loginIcon:hover {
+  color: var(--mainColorHover);
+}
+
+.errorIcon {
+  color: var(--mainColor);
+  margin-right: 5px;
+}
+
+@media (min-width: 800px) {
+  .typingArea {
+    width: 70%;
+  }
+  .traks {
+    width: 70%;
+  }
+}
