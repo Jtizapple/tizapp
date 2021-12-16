@@ -63,7 +63,7 @@ const Dashboard = ({ code }) => {
   }, [showMoreInfo]);
 
   useEffect(() => {
-    if (pageCount === 0) {
+    if (pageCount == 0) {
       setFakePageNumber(0);
     } else {
       setFakePageNumber(pageNumber + 1);
@@ -119,7 +119,7 @@ const Dashboard = ({ code }) => {
         </div>
       );
     }
-    if (search === 0) {
+    if (search == 0) {
       return (
         <div className="message">
           <FaSpotify className="messageIcon" />
